@@ -1,0 +1,46 @@
+<h1>Aareon Angular Test</h1>
+<form (ngSubmit)="onSubmit()" [formGroup]="form">
+  <div>
+    <div class="flex">
+      <label class="label">Title</label>
+      <select formControlName="title">
+        <option [ngValue]="null" disabled>-- Select an option --</option>
+        <option *ngFor="let title of titles" [ngValue]="title.name">
+          {{ title.name }}
+        </option>
+      </select>
+    </div>
+    <div class="flex">
+      <label class="label">First name</label>
+      <input
+        type="text"
+        placeholder="First name"
+        class="input"
+        formControlName="firstName"
+      />
+    </div>
+    <div class="flex">
+      <label class="label">Last name</label>
+      <input
+        type="text"
+        placeholder="Last name"
+        class="input"
+        (keyup)="validateLastName()"
+        formControlName="lastName"
+        [ngClass]="{ validInput: isValid }"
+      />
+    </div>
+    <span *ngIf="isValid">* Last name is mandatory</span>
+    <div>
+      <input
+        type="checkbox"
+        (change)="handleCheckbox()"
+        formControlName="acceptTerms"
+      />
+      <label id="terms">I accept the terms & conditions</label>
+    </div>
+    <div>
+      <button [disabled]="disableButton">Submit</button>
+    </div>
+  </div>
+</form>

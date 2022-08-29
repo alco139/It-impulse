@@ -1,0 +1,26 @@
+.flex {
+  display: flex;
+  margin-bottom: 10px;
+}
+.input {
+  width: 100vw;
+}
+.label {
+  min-width: 20vw;
+}
+#terms {
+  margin-left: 20px;
+}
+button {
+  width: 11vw;
+  height: 2.5vh;
+  float: right;
+  margin-top: 20px;
+}
+.validInput {
+  border: solid red;
+}
+span {
+  margin-left: 20vw;
+  color: red;
+}
